@@ -20,6 +20,10 @@ const meetingSchema = new Schema({
         type: String,
         required: true
     },
+    idTMDB: {
+        type: Number,
+        required: true
+    },
     posterPic: {
         type: String,
         required: true

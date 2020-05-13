@@ -38,6 +38,7 @@ const userSchema = new Schema({
     place: [placeSchema],
     followingList: [{
         title: String,
+        idTMDB: Number,
         posterPic: String
     }],
     createdMeetings: [{ type: Schema.Types.ObjectId, ref: 'Meeting' }],

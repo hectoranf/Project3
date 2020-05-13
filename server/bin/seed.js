@@ -20,79 +20,98 @@ const randomInt = (max, min = 0) => Math.floor(Math.random() * (max - min + 1)) 
 const movieList = [
     {
         title: "The Flash",
-        posterPic: "http://image.tmdb.org/t/p/w185/wHa6KOJAoNTFLFtp7wguUJKSnju.jpg",
+        idTMDB: 60735,
+        posterPic: "/wHa6KOJAoNTFLFtp7wguUJKSnju.jpg"
     },
     {
-        title: "Rick and Morty",
-        posterPic: "http://image.tmdb.org/t/p/w185/8kOWDBK6XlPUzckuHDo3wwVRFwt.jpg"
+        title: "Ley y orden: unidad de víctimas especiales",
+        idTMDB: 2734,
+        posterPic: "/6t6r1VGQTTQecN4V0sZeqsmdU9g.jpg"
     },
     {
-        title: "Law & Order: Special Victims Unit",
-        posterPic: "http://image.tmdb.org/t/p/w185/6t6r1VGQTTQecN4V0sZeqsmdU9g.jpg"
+        title: "Rick y Morty",
+        idTMDB: 60625,
+        posterPic: "/8kOWDBK6XlPUzckuHDo3wwVRFwt.jpg"
     },
     {
-        title: "The Simpsons",
-        posterPic: "http://image.tmdb.org/t/p/w185/qcr9bBY6MVeLzriKCmJOv1562uY.jpg"
+        title: "Anatomía de Grey",
+        idTMDB: 1416,
+        posterPic: "/eqgIOObafPJitt8JNh1LuO2fvqu.jpg"
     },
     {
-        title: "Grey's Anatomy",
-        posterPic: "http://image.tmdb.org/t/p/w185/eqgIOObafPJitt8JNh1LuO2fvqu.jpg"
-    },
-    {
-        title: "The Blacklist",
-        posterPic: "http://image.tmdb.org/t/p/w185/y3Huzln26zGNW4RCr0h4PTwEpfi.jpg"
-    },
-    {
-        title: "Talking Tom and Friends",
-        posterPic: "http://image.tmdb.org/t/p/w185/fVeSFv892YdLcvftJAZPSDBTpyp.jpg"
-    },
-    {
-        title: "Westworld",
-        posterPic: "http://image.tmdb.org/t/p/w185/6aj09UTMQNyfSfk0ZX8rYOEsXL2.jpg"
-    },
-    {
-        title: "Friends",
-        posterPic: "http://image.tmdb.org/t/p/w185/f496cm9enuEsZkSPzCwnTESEK5s.jpg"
-    },
-    {
-        title: "Supernatural",
-        posterPic: "http://image.tmdb.org/t/p/w185/KoYWXbnYuS3b0GyQPkbuexlVK9.jpg"
+        idTMDB: 456,
+        title: "Los Simpson",
+        posterPic: "/u8BMLmwoc7YPHKSWawOOqC1c8lJ.jpg",
+
     },
     {
         title: "Breaking Bad",
-        posterPic: "http://image.tmdb.org/t/p/w185/ggFHVNu6YYI5L9pCfOacjizRGt.jpg",
+        idTMDB: 1396,
+        posterPic: "/mVhQd5ZiAcUJfFWPJRZW4Mliyur.jpg"
     },
     {
-        title: "Family Guy",
-        posterPic: "http://image.tmdb.org/t/p/w185/q3E71oY6qgAEiw6YZIHDlHSLwer.jpg"
+        title: "Sobrenatural",
+        idTMDB: 1622,
+        posterPic: "/KoYWXbnYuS3b0GyQPkbuexlVK9.jpg"
     },
     {
-        title: "Blindspot",
-        posterPic: "http://image.tmdb.org/t/p/w185/fx3SId5m3j77BOM4YJ0veJwsraq.jpg"
+        title: "The Blacklist",
+        idTMDB: 46952,
+        posterPic: "/y3Huzln26zGNW4RCr0h4PTwEpfi.jpg"
     },
     {
-        title: "Doctor Who",
-        posterPic: "http://image.tmdb.org/t/p/w185/3EcYZhBMAvVw4czcDLg9Sd0FuzQ.jpg"
+        title: "Westworld",
+        idTMDB: 63247,
+        posterPic: "/gvX38K4xcolV6Vjs1uh0MNrUTH8.jpg"
     },
     {
-        title: "Game of Thrones",
-        posterPic: "http://image.tmdb.org/t/p/w185/u3bZgnGQ9T01sWNhyveQz0wH0Hl.jpg",
+        title: "Padre de familia",
+        posterPic: "/q3E71oY6qgAEiw6YZIHDlHSLwer.jpg"
     },
     {
-        title: "Riverdale",
-        posterPic: "http://image.tmdb.org/t/p/w185/6zBWSuYW3Ps1nTfeMS8siS4KUaA.jpg"
+        title: "Friends",
+        idTMDB: 1668,
+        posterPic: "/f496cm9enuEsZkSPzCwnTESEK5s.jpg"
     },
     {
         title: "Outlander",
-        posterPic: "http://image.tmdb.org/t/p/w185/pCTSO32nTmJHkEFAv3qJLhVueEa.jpg"
+        idTMDB: 56570,
+        posterPic: "/wwxKbrMlwMrC06B7aCIkDy3SAo6.jpg"
     },
     {
-        title: "The Walking Dead",
-        posterPic: "http://image.tmdb.org/t/p/w185/reKs8y4mPwPkZG99ZpbKRhBPKsX.jpg"
+        title: "Talking Tom and Friends",
+        idTMDB: 81425,
+        posterPic: "/fVeSFv892YdLcvftJAZPSDBTpyp.jpg"
     },
     {
-        title: "Upload",
-        posterPic: "http://image.tmdb.org/t/p/w185/6SIDIB59JYsQ8EfUgM0IaFfwXtS.jpg"
+        title: "Doctor Who",
+        idTMDB: 57243,
+        posterPic: "/3EcYZhBMAvVw4czcDLg9Sd0FuzQ.jpg"
+    },
+    {
+        title: "Diriliş: Ertuğrul",
+        idTMDB: 66017,
+        posterPic: "/rOar34cNLn2sgDH5FmAa1bvMpBv.jpg"
+    },
+    {
+        title: "Navy: Investigación criminal",
+        idTMDB: 4614,
+        posterPic: "/q9TVqJSHfJPsEJGHtxHuBvOdKu9.jpg"
+    },
+    {
+        title: "Riverdale",
+        idTMDB: 69050,
+        posterPic: "/f9glyInFlVmyJGB95jLdOo3uMtJ.jpg"
+    },
+    {
+        title: "Juego de Tronos",
+        idTMDB: 1399,
+        posterPic: "/j24NiYZHsuLEdyYqUunlVCapC04.jpg"
+    },
+    {
+        title: "Supergirl",
+        idTMDB: 62688,
+        posterPic: "/4ka8vAzAFUZFKxWyfGfwVcSXuZo.jpg"
     }
 ]
 
@@ -148,8 +167,9 @@ Promise.all([deleteUsers, deleteMeetings])
             meetings.push({
                 meetingName: Faker.lorem.sentence(),
                 contentTitle: movieList[movieIndex].title,
+                idTMDB: movieList[movieIndex].idTMDB,
                 posterPic: movieList[movieIndex].posterPic,
-                date: Faker.date.between(new Date(2020, 5, 14), new Date(2020, 5, 30)),
+                date: Faker.date.between(new Date(2020, 4, 14), new Date(2020, 5, 30)),
                 seats: numberSeats,
                 creator: selectedUsers[0]._id,
                 participants: participantsId,
