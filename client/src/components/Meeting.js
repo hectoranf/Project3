@@ -19,7 +19,7 @@ class Meeting extends Component {
 
     getByTitle = (title) => {
         this.meetingService.getByTitle(title)
-            .then(response => this.setState({ meetings: response.data }))
+            .then(response => console.log(response.data))
             .catch(err => console.log(err))
     }
 
