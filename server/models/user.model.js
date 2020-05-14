@@ -38,6 +38,11 @@ const userSchema = new Schema({
     place: [placeSchema],
     followingList: [{
         title: String,
+        type: {
+            type: String,
+            enum: ['tv', 'movie'],
+            default: 'tv'
+        },
         idTMDB: Number,
         posterPic: String
     }],

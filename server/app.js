@@ -19,5 +19,6 @@ require('./configs/locals.config')(app)
 // Base URLS
 app.use('/api', require('./routes/auth.routes'))
 app.use('/api/meeting', require('./routes/meeting.routes'))
+app.use('/api/media', require('./routes/media.routes'))
 
 module.exports = app

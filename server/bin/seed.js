@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+mongoose.set('useFindAndModify', false)
 require('dotenv').config()
 
 const Faker = require('faker/locale/es')
@@ -63,10 +64,6 @@ const movieList = [
         title: "Westworld",
         idTMDB: 63247,
         posterPic: "/gvX38K4xcolV6Vjs1uh0MNrUTH8.jpg"
-    },
-    {
-        title: "Padre de familia",
-        posterPic: "/q3E71oY6qgAEiw6YZIHDlHSLwer.jpg"
     },
     {
         title: "Friends",
@@ -166,9 +163,7 @@ Promise.all([deleteUsers, deleteMeetings])
 
             meetings.push({
                 meetingName: Faker.lorem.sentence(),
-                contentTitle: movieList[movieIndex].title,
-                idTMDB: movieList[movieIndex].idTMDB,
-                posterPic: movieList[movieIndex].posterPic,
+                media: movieList[movieIndex],
                 date: Faker.date.between(new Date(2020, 4, 14), new Date(2020, 5, 30)),
                 seats: numberSeats,
                 creator: selectedUsers[0]._id,

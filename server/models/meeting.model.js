@@ -16,17 +16,15 @@ const meetingSchema = new Schema({
         type: String,
         required: true
     },
-    contentTitle: {
-        type: String,
-        required: true
-    },
-    idTMDB: {
-        type: Number,
-        required: true
-    },
-    posterPic: {
-        type: String,
-        required: true
+    media: {
+        title: String,
+        type: {
+            type: String,
+            enum: ['tv', 'movie'],
+            default: 'tv'
+        },
+        idTMDB: Number,
+        posterPic: String
     },
     date: {
         type: Date,
