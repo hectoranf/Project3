@@ -13,18 +13,18 @@ class Meeting extends Component {
 
     getAllMeetings = () => {
         this.meetingService.getAllMeetings()
-            .then(response => this.setState({ meetings: response.data }))
+            .then(response => console.log(response.data))
             .catch(err => console.log(err))
     }
 
     getByTitle = (title) => {
         this.meetingService.getByTitle(title)
-            .then(response => console.log(response.data))
+            .then(response => this.setState({ meetings: response.data }))
             .catch(err => console.log(err))
     }
 
     componentDidMount = () => {
-        this.getByTitle('the f')
+        this.getByTitle('fla')
     }
 
     render() {
