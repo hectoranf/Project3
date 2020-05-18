@@ -30,6 +30,10 @@ const meetingSchema = new Schema({
         type: Date,
         required: true
     },
+    description: {
+        type: String,
+        required: true
+    },
     seats: {
         type: Number,
         required: true

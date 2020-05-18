@@ -49,7 +49,7 @@ class App extends Component {
             <Route path="/" exact render={() => this.state.loggedInUser ? <Home user={this.state.loggedInUser} /> : <Landing />} />
             <Route path="/signup" render={props => <Signup {...props} setTheUser={this.setTheUser} />} />
             <Route path="/login" render={props => <Login {...props} setTheUser={this.setTheUser} />} />
-            <Route path="/meeting/details/:id" render={props => this.state.loggedInUser ? <MeetingDetails {...props} user={this.state.loggedInUser} /> : <Redirect to="/" />} />
+            <Route path="/meeting/details/:id" render={props => this.state.loggedInUser ? <MeetingDetails {...props} user={this.state.loggedInUser} setTheUser={this.setTheUser} /> : <Redirect to='/'/>} />
 
           </Switch>
 

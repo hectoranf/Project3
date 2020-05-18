@@ -6,8 +6,6 @@ import './MeetingSearchCard.css'
 
 
 const MeetingSearchCard = props => {
-
-    const date = new Date(Date.parse(props.date))
     return (
 
         <Col md={{ span: 10, offset: 1 }} as='article'>
@@ -19,8 +17,9 @@ const MeetingSearchCard = props => {
                 <div>
                     <header>
                         <h1>{props.meetingName}</h1>
-                        <p><span>Fecha</span>: {`${date.getDate()} - ${date.getMonth() + 1} - ${date.getFullYear()}`}</p>
-                        <p><span>Hora</span>: {date.getHours()}:{date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes()}</p>
+                        <hr/>
+                        <p><span>Fecha</span>: {`${props.date.getDate()} - ${props.date.getMonth() + 1} - ${props.date.getFullYear()}`}</p>
+                        <p><span>Hora</span>: {props.date.getHours()}:{props.date.getMinutes() < 10 ? `0${props.date.getMinutes()}` : props.date.getMinutes()}</p>
                         <p><span>Lugares disponibles</span>: {props.freeSeats}</p>
                     </header>
                 </div>

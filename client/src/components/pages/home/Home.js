@@ -26,7 +26,16 @@ class Home extends Component {
 
     getMeetings = () => {
         this.meetingService.getAllMeetings()
-            .then(response => this.setState({ nearMeetings: response.data }))
+            .then(response => {
+                let date
+                response.data.map(elm => {
+                    date = new Date(Date.parse(elm.date))
+                    elm.date = date
+                })
+                response.data.sort((a, b) => a.date - b.date)
+
+                this.setState({ nearMeetings: response.data })
+            })
             .catch(err => console.log(err))
     }
 
