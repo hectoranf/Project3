@@ -8,29 +8,30 @@ const bcrypt = require("bcrypt")
 
 router.post('/signup', (req, res, next) => {
 
-    const username = req.body.username;
-    const password = req.body.password;
-
+    const username = req.body.username
+    const password = req.body.password
+    const email = req.body.email
+    const profilePic = req.body.profilePic
 
     if (!username || !password) {
-        res.status(400).json({ message: 'Provide username and password' });
+        res.status(400).json({ message: 'Rellena los campos de usuario y contraseña.' });
         return;
     }
 
-    if (password.length < 2) {
-        res.status(400).json({ message: 'Please make your password at least 8 characters long for security purposes.' });
+    if (password.length < 8) {
+        res.status(400).json({ message: 'La contraseña debe tener al menos 8 caracteres.' });
         return;
     }
 
     User.findOne({ username }, (err, foundUser) => {
 
         if (err) {
-            res.status(500).json({ message: "Username check went bad." });
+            res.status(500).json({ message: "Error al comprobar la disponibilidad del usuario." });
             return;
         }
 
         if (foundUser) {
-            res.status(400).json({ message: 'Username taken. Choose another one.' });
+            res.status(400).json({ message: 'El usuario ya está en uso.' });
             return;
         }
 
@@ -39,12 +40,14 @@ router.post('/signup', (req, res, next) => {
 
         const aNewUser = new User({
             username: username,
-            password: hashPass
-        });
+            password: hashPass,
+            email: email,
+            profilePic: profilePic
+        })
 
         aNewUser.save(err => {
             if (err) {
-                res.status(400).json({ message: 'Saving user to database went wrong.' });
+                res.status(400).json({ message: 'Error al guardar el usuario en la BBDD.' });
                 return;
             }
 
@@ -53,7 +56,7 @@ router.post('/signup', (req, res, next) => {
             req.login(aNewUser, (err) => {
 
                 if (err) {
-                    res.status(500).json({ message: 'Login after signup went bad.' });
+                    res.status(500).json({ message: 'Erro al iniciar sesión.' });
                     return;
                 }
 

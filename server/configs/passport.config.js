@@ -27,6 +27,22 @@ module.exports = app => {
 
     passport.use(new LocalStrategy({ passReqToCallback: true }, (req, username, password, next) => {
         User.findOne({ username })
+            .populate({
+                path: 'createdMeetings',
+                model: 'Meeting',
+                populate: {
+                    path: 'creator',
+                    model: 'User'
+                }
+            })
+            .populate({
+                path: 'joinedMeetings',
+                model: 'Meeting',
+                populate: {
+                    path: 'creator',
+                    model: 'User'
+                }
+            })
             .then(user => {
                 if (!user) {
                     return next(null, false, { message: "Nombre de usuario incorrecto" })

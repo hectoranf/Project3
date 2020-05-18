@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import MeetingService from './../service/meeting.service'
 
+import Container from 'react-bootstrap/Container'
+
+
 class Meeting extends Component {
 
     constructor() {
@@ -24,17 +27,17 @@ class Meeting extends Component {
     }
 
     componentDidMount = () => {
-        this.getByTitle('fla')
+        this.getByTitle('the fla')
     }
 
     render() {
         return (
-            <>
+            <Container fluid>
                 <h1>Los meetings para ver The Flash</h1>
                 <ul>
                     {this.state.meetings.map(elm => <li key={elm._id}>{elm.media.title}</li>)}
                 </ul>
-            </>
+            </Container>
         )
     }
 

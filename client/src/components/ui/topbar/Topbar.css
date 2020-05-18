@@ -1,0 +1,29 @@
+.top-bar{
+    background-color: #02263F;
+    color:#FAF8F0;
+    z-index: 2000;
+    height: 75px;
+}
+.top-bar img{
+    width:190px;
+}
+
+.top-bar .logo{
+    width: 215px;
+    text-align: center;
+    padding-left: 0px;
+    margin-left: 0px;
+    font-size: 1.7em;
+}
+
+.top-bar a{
+    color:#FAF8F0;
+    text-decoration: none;
+}
+
+.login-button{
+    font-weight: 300;
+    background-color: #02263F;
+    border:none;
+    color:#FAF8F0;
+}

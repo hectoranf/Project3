@@ -17,7 +17,8 @@ require('./configs/views.configs')(app)
 require('./configs/locals.config')(app)
 
 // Base URLS
-app.use('/api', require('./routes/auth.routes'))
+app.use('/api/auth', require('./routes/auth.routes'))
+app.use('/api/files', require('./routes/files.routes'))
 app.use('/api/meeting', require('./routes/meeting.routes'))
 app.use('/api/media', require('./routes/media.routes'))
 

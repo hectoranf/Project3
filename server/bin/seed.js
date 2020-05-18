@@ -136,6 +136,19 @@ const createUsers = (size) => {
             followingList: getFollowingList(randomInt(4, 1))
         })
     }
+    array.push({
+        username: 'dev',
+        email: 'hectorproject3@gmail.com',
+        password: bcrypt.hashSync('dev', salt),
+        profilePic: Faker.image.avatar(),
+        place: [{
+            name: 'Casa',
+            type: 'Point',
+            coordinates: [40.441951, -3.702496]
+        }],
+        followingList: getFollowingList(randomInt(4, 1))
+    })
+
     return array
 }
 
