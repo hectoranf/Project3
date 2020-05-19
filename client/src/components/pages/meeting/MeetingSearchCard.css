@@ -1,6 +1,6 @@
 .search-card{
     border: 2px solid #043353;
-    border-radius: 15px;
+    border-radius: 8px;
     margin-top: 20px;
     color: #043353;
     padding:20px 15px 0px;
@@ -14,6 +14,8 @@
 .search-card:hover{
     text-decoration: none;
     color: #043353;
+    box-shadow: none;
+
 }
 
 .search-card figure{

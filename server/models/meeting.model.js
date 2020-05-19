@@ -45,6 +45,13 @@ const meetingSchema = new Schema({
     creator: { type: Schema.Types.ObjectId, ref: 'User' },
     participants: [{ type: Schema.Types.ObjectId, ref: 'User' }],
     snacksList: [String],
+    location: {
+        type: {
+            type: String,
+            default: 'Point'
+        },
+        coordinates: [Number]
+    },
     messages: [messageSchema]
 },
     {

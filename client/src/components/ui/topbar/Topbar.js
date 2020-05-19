@@ -37,7 +37,7 @@ class Topbar extends Component {
                         : <nav>
                             <form onSubmit={this.handleSubmit}>
                                 <input type="search"></input>
-                                <button>Search</button>
+                                <button className='form-button'>Search</button>
                             </form>
                             <NavLink className="form-button" to="/meeting/create" >Crea una quedada</NavLink>
                         </nav>

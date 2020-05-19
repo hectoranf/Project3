@@ -35,7 +35,7 @@ const userSchema = new Schema({
     profilePic: {
         type: String
     },
-    place: [placeSchema],
+    places: [placeSchema],
     followingList: [{
         title: String,
         type: {

@@ -128,10 +128,12 @@ const createUsers = (size) => {
             email: Faker.internet.email(),
             password: bcrypt.hashSync(Faker.internet.password(), salt),
             profilePic: Faker.image.avatar(),
-            place: [{
+            places: [{
                 name: 'Casa',
-                type: 'Point',
-                coordinates: [randomLatitude(), randomLongitude()]
+                location: {
+                    type: 'Point',
+                    coordinates: [randomLatitude(), randomLongitude()]
+                }
             }],
             followingList: getFollowingList(randomInt(4, 1))
         })
@@ -141,10 +143,12 @@ const createUsers = (size) => {
         email: 'hectorproject3@gmail.com',
         password: bcrypt.hashSync('dev', salt),
         profilePic: Faker.image.avatar(),
-        place: [{
+        places: [{
             name: 'Casa',
-            type: 'Point',
-            coordinates: [40.441951, -3.702496]
+            location: {
+                type: 'Point',
+                coordinates: [40.441951, -3.702496]
+            }
         }],
         followingList: getFollowingList(randomInt(10, 7))
     })
@@ -164,7 +168,7 @@ Promise.all([deleteUsers, deleteMeetings])
         seededUsers = createdUsers
 
         const meetings = []
-        let seats, movieIndex, shuffled
+        let movieIndex, shuffled
         for (let i = 0; i < 200; i++) {
             numberSeats = randomInt(5, 1)
             movieIndex = randomInt(movieList.length - 1)
@@ -173,7 +177,6 @@ Promise.all([deleteUsers, deleteMeetings])
             shuffled = seededUsers.sort(() => 0.5 - Math.random());
             let selectedUsers = shuffled.slice(0, randomInt(numberSeats, 1));
             let participantsId = selectedUsers.slice(1).map(elm => elm._id)
-
             meetings.push({
                 meetingName: Faker.lorem.sentence(),
                 media: movieList[movieIndex],
@@ -183,7 +186,8 @@ Promise.all([deleteUsers, deleteMeetings])
                 creator: selectedUsers[0]._id,
                 participants: participantsId,
                 freeSeats: numberSeats - participantsId.length,
-                snacksList: []
+                snacksList: [],
+                location: selectedUsers[0].places[0].location
             })
         }
         return Meeting.create(meetings)

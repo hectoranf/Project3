@@ -47,7 +47,7 @@ class Home extends Component {
     render() {
         return (
             <Container fluid>
-                <Row as='section'>
+                <Row as='section' >
                     {this.state.nearMeetings.map(elm => <SearchCard key={elm._id} {...elm} />)}
                 </Row>
             </Container>
