@@ -8,7 +8,7 @@ const LandingCarousel = () => {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src='./img/landing/landing1.jpeg'
+                    src='./img/landing/landing1.jpg'
                     alt='Landing Carrousel img'
                 />
                 <Carousel.Caption>

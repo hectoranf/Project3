@@ -26,8 +26,7 @@ class Sidebar extends Component {
                         <li><img src={this.props.user.profilePic} alt={this.props.user.username} /> {this.props.user.username}</li>
                         <hr />
                         <li><NavLink className="side-link" to="/" >Quedadas</NavLink></li>
-                        <li><NavLink className="side-link" to="/" >Favoritos</NavLink></li>
-                        <li><NavLink className="side-link" to="/" >Mensajes</NavLink></li>
+                        <li><NavLink className="side-link" to="/following" >Siguiendo</NavLink></li>
                         <hr />
                         <li><NavLink className="side-link" to="/" onClick={this.logout} >Cerrar sesión</NavLink></li>
                     </ul>

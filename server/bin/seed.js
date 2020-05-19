@@ -146,7 +146,7 @@ const createUsers = (size) => {
             type: 'Point',
             coordinates: [40.441951, -3.702496]
         }],
-        followingList: getFollowingList(randomInt(4, 1))
+        followingList: getFollowingList(randomInt(10, 7))
     })
 
     return array

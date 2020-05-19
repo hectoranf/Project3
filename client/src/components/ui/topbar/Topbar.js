@@ -37,6 +37,7 @@ class Topbar extends Component {
                             <input type="search"></input>
                             <button>Search</button>
                         </form>
+                        
                     }
                 </Navbar>
 

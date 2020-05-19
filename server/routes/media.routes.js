@@ -18,4 +18,11 @@ router.get('/details', ensureLogin.ensureLoggedIn(), (req, res, next) => {
         .catch(err => next(new Error(err)))
 })
 
+router.get('/follow', ensureLogin.ensureLoggedIn(), (req, res, next) => {
+    apiHandler.get(`/${req.query.type}/${req.query.id}?api_key=${process.env.TMDB_KEY}`)
+        .then(data => res.json(data.data))
+        .catch(err => next(new Error(err)))
+})
+
+
 module.exports = router

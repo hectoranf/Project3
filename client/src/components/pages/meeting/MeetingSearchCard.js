@@ -17,10 +17,10 @@ const MeetingSearchCard = props => {
                 <div>
                     <header>
                         <h1>{props.meetingName}</h1>
-                        <hr/>
-                        <p><span>Fecha</span>: {`${props.date.getDate()} - ${props.date.getMonth() + 1} - ${props.date.getFullYear()}`}</p>
-                        <p><span>Hora</span>: {props.date.getHours()}:{props.date.getMinutes() < 10 ? `0${props.date.getMinutes()}` : props.date.getMinutes()}</p>
-                        <p><span>Lugares disponibles</span>: {props.freeSeats}</p>
+                        <hr />
+                        <p><span className='regular-weight'>Fecha</span>: {`${props.date.getDate()} - ${props.date.getMonth() + 1} - ${props.date.getFullYear()}`}</p>
+                        <p><span className='regular-weight'>Hora</span>: {props.date.getHours()}:{props.date.getMinutes() < 10 ? `0${props.date.getMinutes()}` : props.date.getMinutes()}</p>
+                        <p><span className='regular-weight'>Lugares disponibles</span>: {props.freeSeats}</p>
                     </header>
                 </div>
                 <figure>

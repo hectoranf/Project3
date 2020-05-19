@@ -99,9 +99,9 @@ class MeetingDetails extends Component {
                                     <header>
                                         <h3>Datos</h3>
                                     </header>
-                                    <p><span className='bold'>Fecha</span>: {`${this.state.meeting.date.getDate()} - ${this.state.meeting.date.getMonth() + 1} - ${this.state.meeting.date.getFullYear()}`}</p>
-                                    <p><span className='bold'>Hora</span>: {this.state.meeting.date.getHours()} : {this.state.meeting.date.getMinutes() < 10 ? `0${this.state.meeting.date.getMinutes()}` : this.state.meeting.date.getMinutes()}</p>
-                                    <p><span className='bold'>Sitios libres</span>: {this.state.meeting.freeSeats}</p>
+                                    <p><span className='regular-weight'>Fecha</span>: {`${this.state.meeting.date.getDate()} - ${this.state.meeting.date.getMonth() + 1} - ${this.state.meeting.date.getFullYear()}`}</p>
+                                    <p><span className='regular-weight'>Hora</span>: {this.state.meeting.date.getHours()} : {this.state.meeting.date.getMinutes() < 10 ? `0${this.state.meeting.date.getMinutes()}` : this.state.meeting.date.getMinutes()}</p>
+                                    <p><span className='regular-weight'>Sitios libres</span>: {this.state.meeting.freeSeats}</p>
                                     <hr />
                                 </Col>
                                 <Col as='article' lg={12}>
@@ -115,6 +115,7 @@ class MeetingDetails extends Component {
                             </Row>
                         </Col>
                     </Row>}
+                <hr />
             </Container>
         )
     }
