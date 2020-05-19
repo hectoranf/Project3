@@ -27,3 +27,16 @@
     border:none;
     color:#FAF8F0;
 }
+
+.top-bar form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.top-bar nav{
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+}

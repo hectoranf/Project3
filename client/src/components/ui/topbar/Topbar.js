@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
@@ -33,11 +33,15 @@ class Topbar extends Component {
                             <Nav.Link as="div" className="ml-auto"><Link to="/login" >Iniciar Sesion</Link></Nav.Link>
                             <Nav.Link as="div" className="ml-auto"><Link to="/signup" >Registro</Link></Nav.Link>
                         </Nav>
-                        : <form onSubmit={this.handleSubmit}>
-                            <input type="search"></input>
-                            <button>Search</button>
-                        </form>
-                        
+
+                        : <nav>
+                            <form onSubmit={this.handleSubmit}>
+                                <input type="search"></input>
+                                <button>Search</button>
+                            </form>
+                            <NavLink className="form-button" to="/meeting/create" >Crea una quedada</NavLink>
+                        </nav>
+
                     }
                 </Navbar>
 
