@@ -88,3 +88,9 @@ hr{
 .shadow-down{
    box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.9); 
 }
+
+.marker{
+    width:10px;
+    height:10px;
+    background-color: lawngreen;
+}

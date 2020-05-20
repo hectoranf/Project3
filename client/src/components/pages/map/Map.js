@@ -29,18 +29,22 @@ export default class Map extends Component {
         const handleApiLoaded = (map, maps) => {
             // use map and maps objects
         }
-        // console.log(process.env.REACT_APP_KEY)
+        // process.env.REACT_APP_KEY      
         return (
-            < div style={{ height: '200px', width: '100%', zIndex: 0 }
+            < div style={{ height: '250px', width: '100%', zIndex: 0 }
             }>
                 <GoogleMapReact
-                    bootstrapURLKeys={{ key: process.env.REACT_APP_KEY }}
+                    bootstrapURLKeys={{ key: /*KEYYYYYYYYY*/ }}
                     defaultCenter={this.props.pos && this.props.pos}
                     defaultZoom={this.props.zoom}
                     yesIWantToUseGoogleMapApiInternals
                     onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
                 >
-
+                    <Marker
+                        lat={40.4167754}
+                        lng={-3.7037901999999576}
+                        text="My Marker"
+                    />
 
 
                 </GoogleMapReact>
