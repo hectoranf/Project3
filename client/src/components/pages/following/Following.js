@@ -34,9 +34,7 @@ class Following extends Component {
 
     componentDidMount = () => {
         this.initFollowingLists()
-        // this.MediaService.getAll('de las flores')
-        //     .then(response => console.log(response.data.results[0]))
-        //     .catch(err => console.log(err))
+        
     }
 
     render() {

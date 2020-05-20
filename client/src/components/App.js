@@ -58,11 +58,11 @@ class App extends Component {
 
             <Route path="/following" render={props => this.state.loggedInUser
               ? <Following {...props} user={this.state.loggedInUser} setTheUser={this.setTheUser} />
-              : <Redirect to='/' />} />} />
+              : <Redirect to='/' />} />
 
             <Route path="/meeting/create" render={props => this.state.loggedInUser
               ? <MeetingForm {...props} user={this.state.loggedInUser} setTheUser={this.setTheUser} />
-              : <MeetingForm {...props} user={this.state.loggedInUser} setTheUser={this.setTheUser} />} />
+              : <Redirect to='/' />} />
 
           </Switch>
 

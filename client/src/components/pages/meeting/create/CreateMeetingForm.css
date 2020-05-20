@@ -8,20 +8,32 @@
 
 .creating-meeting input{
         color: #043353;
+        border: 1px solid #E44652;
+}
+.form-control{
+    color: #043353;
+    background-color:#F8F8F8;
+    border: 1px solid #E44652;
+}
+.creating-meeting .form-date{
+    border-radius: .25rem;
+    padding: .375rem .75rem;
+    background-color:#F8F8F8;
 }
 
-
 .search-results{
-    margin-top: 2px;
+    margin-top: 3px;
     max-width: 500px;
     min-width: 500px;
     max-height: 200px;
     overflow-y: scroll;
     position: absolute;
-    background-color: #E44652;
-    color:#FAF8F0;
+    z-index: 1000;
+    background-color: #F8F8F8;
+    color:#E44652;
     padding-left: 0px;
     font-weight: 400;
+    border-radius: .25rem;
 }
 
 .search-results li{
@@ -31,11 +43,13 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    border-radius: .25rem;
 }
 
 .search-results li:hover{
-    background-color: #FAF8F0;
-    color:#E44652;
+    
+    background-color: #E44652;
+    color:#FAF8F0;
 }
 
 .search-results li>p{

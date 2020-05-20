@@ -30,8 +30,8 @@ router.get('/:id', ensureLogin.ensureLoggedIn(), (req, res, next) => {
 })
 
 router.post('/create', ensureLogin.ensureLoggedIn(), (req, res, next) => {
-    Meeting.create(req.body)
-        .then(data => User.findByIdAndUpdate(data.creator, { $push: { createdMeetings: data._id } }, { new: true }))
+    Meeting.create(req.body.meeting)
+        .then(data => User.findByIdAndUpdate(req.user._id, { $push: { createdMeetings: data._id } }, { new: true }))
         .then(data => res.json(data))
         .catch(err => next(new Error(err)))
 })

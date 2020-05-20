@@ -9,10 +9,10 @@ export default class services {
     }
 
     getAllMeetings = () => this.service.get('/getAll')
-
     getByTitle = title => this.service.get(`/media?title=${title}`)
-
     getById = id => this.service.get(`/${id}`)
+
+    createMeeting = meeting => this.service.post(`/create`, { meeting })
 
     joinMeeting = id => this.service.post(`/${id}/join`)
 }

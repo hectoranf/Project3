@@ -148,7 +148,15 @@ const createUsers = (size) => {
             location: {
                 type: 'Point',
                 coordinates: [40.441951, -3.702496]
-            }
+            },
+
+        }, {
+            name: 'IronHack',
+            location: {
+                type: 'Point',
+                coordinates: [40.397453, -3.699451]
+            },
+
         }],
         followingList: getFollowingList(randomInt(10, 7))
     })
@@ -163,13 +171,13 @@ const deleteUsers = User.deleteMany()
 const deleteMeetings = Meeting.deleteMany()
 
 Promise.all([deleteUsers, deleteMeetings])
-    .then(() => User.create(createUsers(100)))
+    .then(() => User.create(createUsers(50)))
     .then(createdUsers => {
         seededUsers = createdUsers
 
         const meetings = []
         let movieIndex, shuffled
-        for (let i = 0; i < 200; i++) {
+        for (let i = 0; i < 80; i++) {
             numberSeats = randomInt(5, 1)
             movieIndex = randomInt(movieList.length - 1)
 

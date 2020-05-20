@@ -49,7 +49,7 @@ class MeetingDetails extends Component {
                     <Row as='section' >
                         <Col lg={{ span: 2, offset: 0 }}>
                             <div className='poster'>
-                                <img src={`http://image.tmdb.org/t/p/w154${this.state.meeting.media.posterPic}`} alt={this.state.meeting.media.title} />
+                                <img src={this.state.meeting.media.posterPic ? `http://image.tmdb.org/t/p/w154${this.state.meeting.media.posterPic}` : 'https://res.cloudinary.com/dba5fn3ws/image/upload/v1589985020/PosterDefault/defaultPoster_esgqhh.jpg'} alt={this.state.meeting.media.title} />
                             </div>
                         </Col>
                         <Col lg={{ span: 10, offset: 0 }}>

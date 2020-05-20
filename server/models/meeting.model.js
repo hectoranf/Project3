@@ -23,8 +23,14 @@ const meetingSchema = new Schema({
             enum: ['tv', 'movie'],
             default: 'tv'
         },
-        idTMDB: Number,
-        posterPic: String
+        idTMDB: {
+            type: Number,
+            default: 0
+        },
+        posterPic:
+        {
+            type: String
+        }
     },
     date: {
         type: Date,
