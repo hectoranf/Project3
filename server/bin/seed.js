@@ -188,7 +188,7 @@ Promise.all([deleteUsers, deleteMeetings])
             meetings.push({
                 meetingName: Faker.lorem.sentence(),
                 media: movieList[movieIndex],
-                date: Faker.date.between(new Date(2020, 4, 14), new Date(2020, 5, 30)),
+                date: Faker.date.between(new Date(2020, 4, 24), new Date(2020, 5, 24)),
                 description: Faker.lorem.paragraph(randomInt(4, 1)),
                 seats: numberSeats,
                 creator: selectedUsers[0]._id,

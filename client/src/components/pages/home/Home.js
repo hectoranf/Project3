@@ -41,7 +41,6 @@ class Home extends Component {
 
     componentDidMount = () => {
         this.getMeetings()
-        console.log(this.props.user)
     }
 
     render() {

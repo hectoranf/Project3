@@ -3,9 +3,12 @@ import React, { Component } from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Map from './../map/Map'
 
 import meetingService from './../../../service/meeting.service'
 import './MeetingDetails.css'
+
+
 
 class MeetingDetails extends Component {
 
@@ -108,6 +111,7 @@ class MeetingDetails extends Component {
                                     <header>
                                         <h3>Localización</h3>
                                     </header>
+                                    <Map pos={this.state.meeting.location.coordinates} marker={true} />
                                     <hr />
                                 </Col>
                                 <Col as='article' lg={12}>
