@@ -68,7 +68,7 @@ class Signup extends Component {
 
             <Container>
 
-                <Form onSubmit={this.handleSubmit}>
+                <Form className="form-style" onSubmit={this.handleSubmit}>
 
                     <Row>
                         <Col md={{ span: 6, offset: 3 }}>

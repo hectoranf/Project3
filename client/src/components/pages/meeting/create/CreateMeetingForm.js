@@ -95,10 +95,10 @@ class CreateMeetingForm extends Component {
 
     render() {
         return (
-            <Container>
+            <Container className='creating-meeting'>
                 <Row>
                     <Col md={{ span: 8, offset: 2 }}>
-                        <h1>Nueva montaña rusa</h1>
+                        <h1>Datos de la quedada</h1>
                         <hr />
                         <Form onSubmit={this.handleSubmit}>
 
@@ -146,7 +146,6 @@ class CreateMeetingForm extends Component {
                             <Form.Group controlId="freeSeats" md="3">
                                 <Form.Label>¿Cuantos invitados quieres que asistan?</Form.Label>
                                 <Form.Control
-                                    placeholder='Da a tus invitados una idea de cómo va a ser la quedada'
                                     name="freeSeats"
                                     type="number"
                                     onChange={this.handleInputChange}

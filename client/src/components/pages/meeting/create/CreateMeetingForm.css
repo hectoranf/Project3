@@ -1,3 +1,16 @@
+.creating-meeting{
+    color: #043353;
+}
+
+.creating-meeting label{
+    font-weight: 400;
+}
+
+.creating-meeting input{
+        color: #043353;
+}
+
+
 .search-results{
     margin-top: 2px;
     max-width: 500px;

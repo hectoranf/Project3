@@ -30,7 +30,7 @@ class Home extends Component {
                 let date
                 response.data.map(elm => {
                     date = new Date(Date.parse(elm.date))
-                    elm.date = date
+                    return elm.date = date
                 })
                 response.data.sort((a, b) => a.date - b.date)
 
