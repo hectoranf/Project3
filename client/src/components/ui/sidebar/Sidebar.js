@@ -25,6 +25,7 @@ class Sidebar extends Component {
                 <ul>
                     <li><img src={this.props.user.profilePic} alt={this.props.user.username} /> {this.props.user.username}</li>
                     <hr />
+                    <li><NavLink className="side-link" to="/" >Home</NavLink></li>
                     <li><NavLink className="side-link" to="/" >Quedadas</NavLink></li>
                     <li><NavLink className="side-link" to="/following" >Siguiendo</NavLink></li>
                     <hr />

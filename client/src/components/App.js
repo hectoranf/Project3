@@ -4,6 +4,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import './App.css'
+import './pages/meeting/create/CreateMeetingForm.css'
 
 // import AuthService from './../service/auth.service'
 import Topbar from './ui/topbar/Topbar'

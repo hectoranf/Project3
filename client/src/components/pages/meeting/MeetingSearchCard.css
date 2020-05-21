@@ -1,12 +1,11 @@
 .search-card{
-    border: 2px solid #043353;
     border-radius: 8px;
-    margin-top: 20px;
+    margin-top: 30px;
     color: #043353;
-    padding:20px 15px 0px;
-    
-    background-color: #FAF8F0;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+    min-height:250px ;
+    max-height:250px ;
+    background-color: #F8F8F8;
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.5);
     display: flex;
     justify-content: space-between;
 }
@@ -14,11 +13,12 @@
 .search-card:hover{
     text-decoration: none;
     color: #043353;
-    box-shadow: none;
+    box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.9);
 
 }
-
 .search-card figure{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
     width:20%;
     display: flex;
     flex-direction: column;
@@ -26,15 +26,28 @@
     align-items: center;
     text-align: center;
     padding: 0px 15px;
+    margin:0;
+    background-color: #043353;
+    
+}
+.search-card .red{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background-color: #E44652;
+    color: #FAF8F0;
 }
 
+
 .search-card h2{
-    color: #043353;
+    color: #FAF8F0;
     font-size: 1em;
     font-weight: 700;
 }
 
 .search-card h1{
+    padding-top: 15px;
     color: #043353;
     font-size: 1.2em;
     font-weight: 400;
@@ -43,6 +56,7 @@
 .search-card img{
     width: 100px;
     border-radius: 5px;
+    margin-top: 10px;
     margin-bottom: 10px;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }

@@ -31,7 +31,7 @@ router.get('/:id', ensureLogin.ensureLoggedIn(), (req, res, next) => {
 
 router.post('/create', ensureLogin.ensureLoggedIn(), (req, res, next) => {
     Meeting.create(req.body.meeting)
-        .then(data => User.findByIdAndUpdate(req.user._id, { $push: { createdMeetings: data._id } }, { new: true }).populate('createdMeetings'))
+        .then(data => User.findByIdAndUpdate(req.user._id, { $push: { createdMeetings: data._id } }, { new: true }).populate('createdMeetings').populate('joinedMeetings'))
         .then(data => res.json(data))
         .catch(err => next(new Error(err)))
 })
@@ -40,7 +40,7 @@ router.post('/:id/join', ensureLogin.ensureLoggedIn(), (req, res, next) => {
     Meeting.findByIdAndUpdate(req.params.id, {
         $push: { participants: req.user._id }, $inc: { freeSeats: -1 }
     }, { new: true })
-        .then(data => User.findByIdAndUpdate(req.user._id, { $push: { joinedMeetings: data._id } }, { new: true }))
+        .then(data => User.findByIdAndUpdate(req.user._id, { $push: { joinedMeetings: data._id } }, { new: true }).populate('createdMeetings').populate('joinedMeetings'))
         .then(data => res.json(data))
         .catch(err => next(new Error(err)))
 })

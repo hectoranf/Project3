@@ -21,6 +21,7 @@ app.use('/api/auth', require('./routes/auth.routes'))
 app.use('/api/files', require('./routes/files.routes'))
 app.use('/api/meeting', require('./routes/meeting.routes'))
 app.use('/api/media', require('./routes/media.routes'))
+app.use('/api/user', require('./routes/user.routes'))
 
 app.use((req, res) => {
     res.sendFile(__dirname + "/public/index.html")

@@ -5,6 +5,7 @@ body{
     background-color: #FAF8F0;
     margin-top:75px;
     padding: 0;
+    padding-bottom: 100px;
 }
 
 .add-margin-left{
@@ -92,6 +93,9 @@ hr{
 .shadow-right{
    box-shadow: 2px 0px 8px 0px rgba(0,0,0,0.75); 
 }
+.shadow-left{
+   box-shadow: -2px 0px 8px 0px rgba(0,0,0,0.75); 
+}
 
 .marker{
     width:20px;
@@ -99,4 +103,28 @@ hr{
     background-color: #FAF8F0;
     border: 3px solid #E44652;
     border-radius: 50%;
+}
+
+.home{
+    padding: 0;
+    margin: 0;
+}
+
+.nav-tab {
+    background-color: #E44652;
+    color: #FAF8F0;
+    box-shadow: inset 0px -8px 12px -10px rgba(0,0,0,0.75); 
+    padding: 0;
+    margin: 0;
+}
+.nav-tab .nav-link{
+    color: #FAF8F0;
+    border: none;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.nav-tab .nav-link.active{
+    color: #E44652;
+    background-color: #FAF8F0;
 }

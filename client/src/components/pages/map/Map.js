@@ -34,7 +34,7 @@ export default class Map extends Component {
             < div style={{ height: this.props.height, width: this.props.width, zIndex: 0, boxShadow: '0px 0px 8px 0px rgba(0, 0, 0, 0.2)' }
             }>
                 <GoogleMapReact
-                    bootstrapURLKeys={{ key: process.env.REACT_APP_KEY }}
+                    bootstrapURLKeys={{ key: 'AIzaSyAgMxlbpkXQlAsUQWBUbN-toHutzEMyYCs' }}
                     defaultCenter={this.props.pos && this.props.pos}
                     defaultZoom={this.props.zoom}
                     yesIWantToUseGoogleMapApiInternals

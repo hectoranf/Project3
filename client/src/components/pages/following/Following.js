@@ -6,6 +6,7 @@ import '@brainhubeu/react-carousel/lib/style.css';
 import FollowingCard from './FollowingCard'
 import MediaService from './../../../service/media.service'
 import Modal from 'react-bootstrap/Modal'
+import FollowingForm from './FollowingForm'
 
 import './Following.css'
 
@@ -25,16 +26,16 @@ class Following extends Component {
         this.setState({ modalShow: visibility })
     }
 
-    initFollowingLists = () => {
+    setFollowingLists = () => {
         const tvArr = [], movieArr = []
         this.props.user && this.props.user.followingList.forEach(elm => elm.type === 'tv' ? tvArr.push(elm) : movieArr.push(elm))
 
-        this.setState({ tv: tvArr, movie: movieArr })
+        this.setState({ tv: tvArr.reverse(), movie: movieArr.reverse() })
     }
 
     componentDidMount = () => {
-        this.initFollowingLists()
-        
+        this.setFollowingLists()
+
     }
 
     render() {
@@ -49,7 +50,7 @@ class Following extends Component {
                     {this.state.tv.length > 0 && <hr className='shadow-down' />}
                     {this.state.tv.length > 0
                         ? <Carousel
-                            slidesPerPage={5}
+                            slidesPerPage={4}
                             slidesPerScroll={2}
                             arrows
 
@@ -58,6 +59,7 @@ class Following extends Component {
                         </Carousel>
                         : <article className='msg'><p>No estás siguiendo ninguna serie</p></article>}
                     {this.state.tv.length > 0 && <hr className='shadow-up' />}
+                    <br />
                 </section>
 
 
@@ -66,10 +68,10 @@ class Following extends Component {
                         <h2>Películas que sigues</h2>
                         <button onClick={() => this.handleModal(true)} className='following-button'>+</button>
                     </header>
-                    {this.state.movie.length > 0 && <hr />}
+                    {this.state.movie.length > 0 && <hr className='shadow-down' />}
                     {this.state.movie.length > 0
                         ? <Carousel
-                            slidesPerPage={5}
+                            slidesPerPage={4}
                             slidesPerScroll={2}
                             arrows
 
@@ -77,12 +79,20 @@ class Following extends Component {
                             {this.state.movie.map(elm => <FollowingCard key={elm._id} {...elm} />)}
                         </Carousel>
                         : <article className='msg'><p>No estás siguiendo ninguna película</p></article>}
-                    {this.state.movie.length > 0 && <hr />}
+                    {this.state.movie.length > 0 && <hr className='shadow-up' />}
                 </section>
 
-                <Modal show={this.state.modalShow} onHide={() => this.handleModal(false)} centered>
+                <Modal className='following-modal' show={this.state.modalShow} onHide={() => this.handleModal(false)} centered>
+                    <Modal.Header className='shadow-down' closeButton>
+                        <Modal.Title ><h4>¿Qué te apetece seguir?</h4></Modal.Title>
+                    </Modal.Header>
                     <Modal.Body>
-                        <h1>Formulario para seguir</h1>
+                        <FollowingForm
+                            user={this.props.user}
+                            setTheUser={this.props.setTheUser}
+                            closeModal={() => this.handleModal(false)}
+                            setFollowingLists={this.setFollowingLists}
+                        />
                     </Modal.Body>
                 </Modal>
             </div>

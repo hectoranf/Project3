@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import MeetingService from './../../../service/meeting.service'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
+import Tabs from 'react-bootstrap/Tabs'
+import Tab from 'react-bootstrap/Tab'
 
 import SearchCard from './../meeting/MeetingSearchCard'
 
@@ -45,11 +47,30 @@ class Home extends Component {
 
     render() {
         return (
-            <Container fluid>
-                <Row as='section' >
+            <>
+                
+                <Container className='home' fluid>
+                    <Tabs
+                        defaultActiveKey="near"
+                        id="uncontrolled-tab-example"
+                        className='nav-tab'
+                    >
+                        <Tab eventKey="near" title="Near" className='tab'>
+                            <Row as='section' >
+                                {this.state.nearMeetings.map(elm => <SearchCard key={elm._id} {...elm} />)}
+                            </Row>
+                        </Tab>
+                        <Tab eventKey="following" title="Following">
+                            <Row as='section' >
+                                {this.state.nearMeetings.map(elm => <SearchCard key={elm._id} {...elm} />)}
+                            </Row>
+                        </Tab>
+                    </Tabs>
+                    {/* <Row as='section' >
                     {this.state.nearMeetings.map(elm => <SearchCard key={elm._id} {...elm} />)}
-                </Row>
-            </Container>
+                </Row> */}
+                </Container>
+            </>
         )
     }
 

@@ -32,7 +32,7 @@ class Topbar extends Component {
 
                     : <nav>
                         <form onSubmit={this.handleSubmit}>
-                            <input type="search" value={this.state.searchValue} onChange={this.handleSearch} placeHolder='¿Qué te apetece ver?'></input>
+                            <input type="search" value={this.state.searchValue} onChange={this.handleSearch} placeholder='¿Qué te apetece ver?'></input>
                             <Link className="search-button" to={this.state.searchValue.length > 0 ? `/meeting/find?title=${this.state.searchValue}` : '/'} >Search</Link>
                         </form>
                         <NavLink className="form-button" to="/meeting/create" >Crea una quedada</NavLink>

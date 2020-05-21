@@ -5,13 +5,11 @@
 .following h1{
     text-align: center;
     margin-bottom: 20px;
-    text-transform: uppercase;
     font-size: 1.9em;
 }
 .following h2{
-    margin-bottom: 15px;
+    padding: 15px 0px;
     font-size: 1.4em;
-    text-transform: uppercase;
     display: inline;
 }
 
@@ -25,7 +23,7 @@
     min-height: 100%;
     width:100%;
     border: 2px solid #043353;
-    background-color: #FAF8F0;
+    background-color: #F8F8F8;
     border-radius: 10px;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     text-align: center;
@@ -71,5 +69,32 @@
     padding: 0px 12px;
     margin-left: 10px;
     border-radius: 50%;
+}
+
+.following-modal {
+    text-align: center;
+    color: #043353;
+}
+
+.following-modal .modal-header{
+    background-color: #043353;
+    color: #FAF8F0;
+    border: none;
+}
+
+.following-modal img{
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    margin-bottom: 10px;
+}
+
+.following-modal p{
+    font-weight: 400;
+    font-size: 1.2em;
+}
+
+.following-modal h4{
+    font-size: 1.1em;
+    display: inline;
 }
 

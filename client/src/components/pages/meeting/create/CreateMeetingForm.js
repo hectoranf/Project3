@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import MediaService from './../../../../service/media.service'
 import MeetingService from './../../../../service/meeting.service'
 
-import './CreateMeetingForm.css'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -11,6 +10,7 @@ import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+
 class CreateMeetingForm extends Component {
 
     constructor(props) {
@@ -116,7 +116,6 @@ class CreateMeetingForm extends Component {
     }
 
     render() {
-        console.log('gggggggggg', this.props)
         return (
 
             <Container className='creating-meeting'>
