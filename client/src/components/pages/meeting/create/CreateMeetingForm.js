@@ -116,6 +116,7 @@ class CreateMeetingForm extends Component {
     }
 
     render() {
+        console.log('gggggggggg', this.props)
         return (
 
             <Container className='creating-meeting'>

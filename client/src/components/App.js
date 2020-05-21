@@ -15,6 +15,7 @@ import Sidebar from './ui/sidebar/Sidebar.js'
 import MeetingDetails from './pages/meeting/MeetingDetails'
 import Following from './pages/following/Following'
 import MeetingForm from './pages/meeting/create/CreateMeetingForm'
+import MeetingFinder from './pages/meeting/find/MeetingFinder'
 
 import AuthService from './../service/auth.service'
 
@@ -62,6 +63,10 @@ class App extends Component {
 
             <Route path="/meeting/create" render={props => this.state.loggedInUser
               ? <MeetingForm {...props} user={this.state.loggedInUser} setTheUser={this.setTheUser} />
+              : <Redirect to='/' />} />
+
+            <Route path="/meeting/find" render={props => this.state.loggedInUser
+              ? <MeetingFinder {...props} user={this.state.loggedInUser} />
               : <Redirect to='/' />} />
 
           </Switch>

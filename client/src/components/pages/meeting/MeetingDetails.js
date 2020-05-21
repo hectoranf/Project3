@@ -44,7 +44,6 @@ class MeetingDetails extends Component {
 
     }
     render() {
-        console.log('los props', this.props)
 
         return (
             <Container fluid className="meeting-details" >
@@ -66,7 +65,7 @@ class MeetingDetails extends Component {
                                 <h3 className='username'>{this.state.meeting.creator.username}</h3>
                             </div>
                         </Col>
-                        <Col lg={5}>
+                        <Col lg={4}>
                             <Row>
                                 <Col as='article' lg={12}>
                                     <header>
@@ -96,7 +95,7 @@ class MeetingDetails extends Component {
                         <Col lg={1} className='separation'>
                             <div ></div>
                         </Col>
-                        <Col lg={4}>
+                        <Col lg={5}>
                             <Row>
                                 <Col lg={12} as='article'>
                                     <header>
@@ -111,7 +110,15 @@ class MeetingDetails extends Component {
                                     <header>
                                         <h3>Localización</h3>
                                     </header>
-                                    <Map pos={this.state.meeting.location.coordinates} marker={true} />
+                                    <Map
+                                        pos={this.state.meeting.location.coordinates}
+                                        zoom={16}
+                                        meetings={[this.state.meeting]}
+                                        width={'100%'}
+                                        height={'250px'}
+                                        marker={true}
+                                    />
+                                    <br />
                                     <hr />
                                 </Col>
                                 <Col as='article' lg={12}>

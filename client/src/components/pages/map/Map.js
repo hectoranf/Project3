@@ -5,7 +5,7 @@ import Marker from './Marker'
 export default class Map extends Component {
     constructor(props) {
         super(props)
-        this.APIKey = process.env.GOOGLE_MAPS_API_KEY
+        this.state = {}
     }
 
     state = {
@@ -29,22 +29,23 @@ export default class Map extends Component {
         const handleApiLoaded = (map, maps) => {
             // use map and maps objects
         }
-        // process.env.REACT_APP_KEY      
+        // process.env.REACT_APP_KEY     
         return (
-            < div style={{ height: '250px', width: '100%', zIndex: 0 }
+            < div style={{ height: this.props.height, width: this.props.width, zIndex: 0, boxShadow: '0px 0px 8px 0px rgba(0, 0, 0, 0.2)' }
             }>
                 <GoogleMapReact
-                    bootstrapURLKeys={{ key: /*KEYYYYYYYYY*/ }}
+                    bootstrapURLKeys={{ key: /*AQUI LA API KEY */ }}
                     defaultCenter={this.props.pos && this.props.pos}
                     defaultZoom={this.props.zoom}
                     yesIWantToUseGoogleMapApiInternals
                     onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
                 >
-                    <Marker
-                        lat={40.4167754}
-                        lng={-3.7037901999999576}
-                        text="My Marker"
-                    />
+                    {this.props.meetings.map((elm, idx) => <Marker
+                        key={idx}
+                        lat={elm.location.coordinates[0]}
+                        lng={elm.location.coordinates[1]}
+                    />)}
+
 
 
                 </GoogleMapReact>

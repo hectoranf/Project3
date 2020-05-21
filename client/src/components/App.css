@@ -82,15 +82,21 @@ hr{
 }
 
 .shadow-up{
-   box-shadow: 3px 0px 8px 0px rgba(0,0,0,0.75); 
+   box-shadow: 0px -2px 8px 0px rgba(0,0,0,0.75); 
 }
 
 .shadow-down{
-   box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.9); 
+   box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.75); 
+}
+
+.shadow-right{
+   box-shadow: 2px 0px 8px 0px rgba(0,0,0,0.75); 
 }
 
 .marker{
-    width:10px;
-    height:10px;
-    background-color: lawngreen;
+    width:20px;
+    height:20px;
+    background-color: #FAF8F0;
+    border: 3px solid #E44652;
+    border-radius: 50%;
 }

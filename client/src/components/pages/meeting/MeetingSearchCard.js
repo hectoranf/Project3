@@ -9,7 +9,7 @@ const MeetingSearchCard = props => {
     return (
 
         <Col md={{ span: 10, offset: 1 }} as='article'>
-            <Link to={`meeting/details/${props._id}`} className="search-card">
+            <Link to={`/meeting/details/${props._id}`} className="search-card">
                 <figure >
                     <img src={props.media.posterPic ? `http://image.tmdb.org/t/p/w154${props.media.posterPic}` : './img/poster/defaultPoster.jpg'} alt={props.media.title} />
                     <h2>{props.media.title}</h2>

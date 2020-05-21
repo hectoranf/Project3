@@ -34,6 +34,7 @@
     padding-left: 0px;
     font-weight: 400;
     border-radius: .25rem;
+    box-shadow: inset 0px 0px 20px -10px rgba(0,0,0,0.8);
 }
 
 .search-results li{
@@ -44,6 +45,7 @@
     align-items: center;
     cursor: pointer;
     border-radius: .25rem;
+    min-height: 60px;
 }
 
 .search-results li:hover{
