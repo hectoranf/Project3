@@ -41,7 +41,13 @@ const userSchema = new Schema({
     },
     places: {
         type: [placeSchema],
-        default: [placeSchema]
+        default: [{
+            name: 'Casa',
+            location: {
+                type: 'Point',
+                coordinates: [40.441951, -3.702496]
+            }
+        }]
     },
     followingList: [{
         title: String,

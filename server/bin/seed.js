@@ -10,7 +10,6 @@ const bcrypt = require('bcrypt')
 const bcryptSalt = 10
 const salt = bcrypt.genSaltSync(bcryptSalt)
 
-// const dbtitle = 'mongodb://localhost/project3'
 mongoose.connect(`${process.env.DB}`, { useUnifiedTopology: true, useNewUrlParser: true })
 
 const randomFloat = (max, min = 0) => Math.random() * (max - min) + min
@@ -195,7 +194,8 @@ Promise.all([deleteUsers, deleteMeetings])
                 participants: participantsId,
                 freeSeats: numberSeats - participantsId.length,
                 snacksList: [],
-                location: selectedUsers[0].places[0].location
+                location: selectedUsers[0].places[0].location,
+                loc: { address: '', coordinates: selectedUsers[0].places[0].location.coordinates }
             })
         }
         return Meeting.create(meetings)

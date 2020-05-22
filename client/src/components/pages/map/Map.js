@@ -29,7 +29,7 @@ export default class Map extends Component {
         const handleApiLoaded = (map, maps) => {
             // use map and maps objects
         }
-        // process.env.REACT_APP_KEY      AIzaSyAgMxlbpkXQlAsUQWBUbN-toHutzEMyYCs
+
         return (
             < div style={{ height: this.props.height, width: this.props.width, zIndex: 0, boxShadow: '0px 0px 8px 0px rgba(0, 0, 0, 0.2)' }
             }>
@@ -42,8 +42,8 @@ export default class Map extends Component {
                 >
                     {this.props.meetings.map((elm, idx) => <Marker
                         key={idx}
-                        lat={elm.location.coordinates[0]}
-                        lng={elm.location.coordinates[1]}
+                        lat={elm.loc.coordinates[0]}
+                        lng={elm.loc.coordinates[1]}
                     />)}
                 </GoogleMapReact>
             </div >

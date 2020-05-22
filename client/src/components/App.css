@@ -60,6 +60,17 @@ hr{
     padding: 8px 20px;
     border-radius: 5px;
     font-weight: 700;
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+}
+
+.white-button{
+    color:#FAF8F0;
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+    background-color: #043353;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: 700;
 }
 
 .form-button:hover{

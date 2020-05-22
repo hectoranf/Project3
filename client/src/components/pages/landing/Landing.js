@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Carousel from './LandingCarousel'
-import Features from './LandingFeatures'
+// import Features from './LandingFeatures'
 
 import './Landing.css'
 
@@ -16,7 +16,7 @@ class Landing extends Component {
         return (
             <div >
                 <Carousel />
-                <Features />
+                {/* <Features /> */}
             </div>
         )
     }

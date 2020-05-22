@@ -3,3 +3,16 @@
     object-fit: cover;
 }
 
+.landing-carousel h3{
+    font-size: 3em;
+    font-weight: 700;
+    color:#FAF8F0;
+}
+
+.landing-carousel p{
+    font-size: 1.5em;
+    font-weight: 400;
+    color:#FAF8F0;
+}
+
+

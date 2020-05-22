@@ -58,6 +58,10 @@ const meetingSchema = new Schema({
         },
         coordinates: [Number]
     },
+    loc: {
+        address: String,
+        coordinates: [Number]
+    },
     messages: [messageSchema]
 },
     {

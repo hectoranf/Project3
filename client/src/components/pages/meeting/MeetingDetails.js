@@ -130,7 +130,7 @@ class MeetingDetails extends Component {
                                             <h3>Localización</h3>
                                         </header>
                                         <Map
-                                            pos={this.state.meeting.location.coordinates}
+                                            pos={this.state.meeting.loc.coordinates}
                                             zoom={16}
                                             meetings={[this.state.meeting]}
                                             width={'100%'}

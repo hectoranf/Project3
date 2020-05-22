@@ -8,8 +8,10 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import DatePicker from "react-datepicker"
+import "react-datepicker/dist/react-datepicker.css"
+
+import GmapPlaces from './../../map/GmapsPlaces'
 
 class CreateMeetingForm extends Component {
 
@@ -29,8 +31,8 @@ class CreateMeetingForm extends Component {
                 seats: '',
                 freeSeats: 1,
                 creator: '',
-                location: {
-                    type: 'Point',
+                loc: {
+                    address: '',
                     coordinates: []
                 },
                 snackList: []
@@ -48,7 +50,7 @@ class CreateMeetingForm extends Component {
         this.meetingService.createMeeting(this.state.meeting)
             .then(response => {
                 this.props.setTheUser(response.data)
-                this.props.history.push('/')
+                this.props.history.push(`/meeting/details/${response.data.createdMeetings[response.data.createdMeetings.length - 1]}`)
             })
             .catch(err => console.log(err))
     }
@@ -107,10 +109,14 @@ class CreateMeetingForm extends Component {
         this.setState({ meeting: meetingCopy })
     }
 
+    setLoc = locAux => {
+        let meetingCopy = { ...this.state.meeting, loc: locAux }
+        this.setState({ meeting: meetingCopy })
+    }
+
     handleSubmit = e => {
         e.preventDefault()
         let meetingCopy = { ...this.state.meeting, creator: this.props.user._id, seats: this.state.meeting.freeSeats }
-        if (meetingCopy.location.coordinates.length !== 2) meetingCopy.location.coordinates = this.props.user.places[0].location.coordinates
         if (!meetingCopy.media.title) meetingCopy.media.title = this.state.searchInput
         this.setState({ meeting: meetingCopy }, () => this.createMeeting())
     }
@@ -152,7 +158,8 @@ class CreateMeetingForm extends Component {
                                     type="textField"
                                     onChange={this.handleInputChange}
                                     value={this.state.meeting.meetingName}
-                                    autoComplete="off" />
+                                    autoComplete="off"
+                                    required />
                             </Form.Group>
 
                             <Form.Row>
@@ -190,15 +197,17 @@ class CreateMeetingForm extends Component {
                                     type="text"
                                     onChange={this.handleInputChange}
                                     value={this.state.meeting.description}
-                                    autoComplete="off" />
+                                    autoComplete="off"
+                                    required />
                             </Form.Group>
 
                             <Form.Group controlId="location">
                                 <Form.Label>¿Dónde va a ser la quedada?</Form.Label>
-                                <Form.Control as="select" onChange={this.handleLocation} custom>
+                                {/* <Form.Control as="select" onChange={this.handleLocation} custom>
                                     <option value='0'>...</option>
                                     {this.props.user && this.props.user.places.map((elm, idx) => <option key={elm._id} value={idx}>{elm.name}</option>)}
-                                </Form.Control>
+                                </Form.Control> */}
+                                <GmapPlaces getData={loc => this.setLoc(loc)}></GmapPlaces>
                             </Form.Group>
 
                             <hr />

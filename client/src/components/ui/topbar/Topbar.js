@@ -26,8 +26,8 @@ class Topbar extends Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 {!this.props.user
                     ? <Nav className="ml-auto">
-                        <Nav.Link as="div" className="ml-auto"><Link to="/login" >Iniciar Sesion</Link></Nav.Link>
-                        <Nav.Link as="div" className="ml-auto"><Link to="/signup" >Registro</Link></Nav.Link>
+                        <Nav.Link as="div" className="ml-auto form-button" style={{ marginRight: '10px' }}><Link to="/login" >Iniciar Sesion</Link></Nav.Link>
+                        <Nav.Link as="div" className="ml-auto white-button" > <Link to="/signup">Registro</Link></Nav.Link>
                     </Nav>
 
                     : <nav>
