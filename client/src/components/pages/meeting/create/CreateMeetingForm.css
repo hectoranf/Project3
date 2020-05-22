@@ -1,5 +1,13 @@
 .creating-meeting{
     color: #043353;
+    padding-top: 30px;
+}
+.creating-meeting h1{
+    text-align: center;
+}
+
+.creating-meeting button{
+    padding: auto;
 }
 
 .creating-meeting label{
@@ -7,8 +15,8 @@
 }
 
 .creating-meeting input{
-        color: #043353;
-        border: 1px solid #E44652;
+    color: #043353;
+    border: 1px solid #E44652;
 }
 .form-control{
     color: #043353;

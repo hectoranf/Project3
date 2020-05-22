@@ -109,6 +109,11 @@ hr{
     padding: 0;
     margin: 0;
 }
+.home h1{
+    text-align: center;
+    margin: 30px auto 20px;
+}
+
 
 .nav-tab {
     background-color: #E44652;
@@ -127,4 +132,13 @@ hr{
 .nav-tab .nav-link.active{
     color: #E44652;
     background-color: #FAF8F0;
+}
+
+.spinner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
 }

@@ -15,4 +15,6 @@ export default class services {
     createMeeting = meeting => this.service.post(`/create`, { meeting })
 
     joinMeeting = id => this.service.post(`/${id}/join`)
+
+    postMessage = (id,message) => this.service.post(`/${id}/message`, { message })
 }

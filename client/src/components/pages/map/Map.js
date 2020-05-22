@@ -29,12 +29,12 @@ export default class Map extends Component {
         const handleApiLoaded = (map, maps) => {
             // use map and maps objects
         }
-        // process.env.REACT_APP_KEY     
+        // process.env.REACT_APP_KEY      AIzaSyAgMxlbpkXQlAsUQWBUbN-toHutzEMyYCs
         return (
             < div style={{ height: this.props.height, width: this.props.width, zIndex: 0, boxShadow: '0px 0px 8px 0px rgba(0, 0, 0, 0.2)' }
             }>
                 <GoogleMapReact
-                    bootstrapURLKeys={{ key: /*KEYYYYYYYY */ }}
+                    bootstrapURLKeys={{ key: 'AIzaSyAgMxlbpkXQlAsUQWBUbN-toHutzEMyYCs' }}
                     defaultCenter={this.props.pos && this.props.pos}
                     defaultZoom={this.props.zoom}
                     yesIWantToUseGoogleMapApiInternals
@@ -45,9 +45,6 @@ export default class Map extends Component {
                         lat={elm.location.coordinates[0]}
                         lng={elm.location.coordinates[1]}
                     />)}
-
-
-
                 </GoogleMapReact>
             </div >
         )

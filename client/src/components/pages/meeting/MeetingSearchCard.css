@@ -3,7 +3,6 @@
     margin-top: 30px;
     color: #043353;
     min-height:250px ;
-    max-height:250px ;
     background-color: #F8F8F8;
     box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.5);
     display: flex;
@@ -27,9 +26,9 @@
     text-align: center;
     padding: 0px 15px;
     margin:0;
-    background-color: #043353;
-    
+    background-color: #043353;  
 }
+
 .search-card .red{
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -47,7 +46,6 @@
 }
 
 .search-card h1{
-    padding-top: 15px;
     color: #043353;
     font-size: 1.2em;
     font-weight: 400;

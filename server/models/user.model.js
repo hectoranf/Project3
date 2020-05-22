@@ -4,14 +4,18 @@ const Schema = mongoose.Schema
 const placeSchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        default: 'Casa'
     },
     location: {
         type: {
             type: String,
             default: 'Point'
         },
-        coordinates: [Number]
+        coordinates: {
+            type: [Number],
+            default: [40.441951, -3.702496]
+        }
     }
 }, {
     timestamps: true
@@ -35,7 +39,10 @@ const userSchema = new Schema({
     profilePic: {
         type: String
     },
-    places: [placeSchema],
+    places: {
+        type: [placeSchema],
+        default: [placeSchema]
+    },
     followingList: [{
         title: String,
         type: {

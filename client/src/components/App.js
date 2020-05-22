@@ -19,6 +19,7 @@ import MeetingForm from './pages/meeting/create/CreateMeetingForm'
 import MeetingFinder from './pages/meeting/find/MeetingFinder'
 
 import AuthService from './../service/auth.service'
+import MyMeetings from './pages/myMeetings/MyMeetings'
 
 
 class App extends Component {
@@ -68,6 +69,10 @@ class App extends Component {
 
             <Route path="/meeting/find" render={props => this.state.loggedInUser
               ? <MeetingFinder {...props} user={this.state.loggedInUser} />
+              : <Redirect to='/' />} />
+
+            <Route path="/meetings" render={props => this.state.loggedInUser
+              ? <MyMeetings {...props} user={this.state.loggedInUser} />
               : <Redirect to='/' />} />
 
           </Switch>

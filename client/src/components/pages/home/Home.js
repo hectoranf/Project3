@@ -3,19 +3,21 @@ import React, { Component } from 'react'
 import MeetingService from './../../../service/meeting.service'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 
+import Loading from './../loading/LoadingPage'
+import Map from './../map/Map'
 import SearchCard from './../meeting/MeetingSearchCard'
 
 class Home extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            myMeetings: [],
-            favouriteMeetings: [],
-            nearMeetings: []
+            followingMeetings: [],
+            allMeetings: []
         }
         this.meetingService = new MeetingService()
     }
@@ -30,13 +32,15 @@ class Home extends Component {
         this.meetingService.getAllMeetings()
             .then(response => {
                 let date
-                response.data.map(elm => {
+                let aux = response.data.filter(elm => (elm.creator._id !== this.props.user._id && !elm.participants.filter(personId => personId === this.props.user._id).length && elm.freeSeats > 0))
+                aux.map(elm => {
                     date = new Date(Date.parse(elm.date))
                     return elm.date = date
                 })
-                response.data.sort((a, b) => a.date - b.date)
+                aux.sort((a, b) => a.date - b.date)
 
-                this.setState({ nearMeetings: response.data })
+                const followingAux = aux.filter(meeting => this.props.user.followingList.filter((elm => elm.type === meeting.media.type && elm.idTMDB === meeting.media.idTMDB)).length > 0)
+                this.setState({ allMeetings: aux, followingMeetings: followingAux })
             })
             .catch(err => console.log(err))
     }
@@ -47,30 +51,54 @@ class Home extends Component {
 
     render() {
         return (
-            <>
-                
-                <Container className='home' fluid>
-                    <Tabs
-                        defaultActiveKey="near"
+            <Container className='home' fluid>
+                {this.state.allMeetings.length > 0
+                    ? <Tabs
+                        defaultActiveKey={this.state.followingMeetings.length > 0 ? 'following' : "all"}
                         id="uncontrolled-tab-example"
                         className='nav-tab'
                     >
-                        <Tab eventKey="near" title="Near" className='tab'>
+                        <Tab eventKey="following" title="Contenido que sigues">
+                            <Map
+                                pos={this.props.user.places[0].location.coordinates}
+                                zoom={15}
+                                meetings={this.state.followingMeetings}
+                                width={'100%'}
+                                height={'50vh'}
+                                marker={true}
+                            />
                             <Row as='section' >
-                                {this.state.nearMeetings.map(elm => <SearchCard key={elm._id} {...elm} />)}
+                                <Col md='12'>
+                                    <header>
+                                        <hr />
+                                        <h1>Quedadas de contenidos que sigues</h1>
+                                    </header>
+                                </Col>
+                                {this.state.followingMeetings.map(elm => <SearchCard key={elm._id} {...elm} />)}
                             </Row>
                         </Tab>
-                        <Tab eventKey="following" title="Following">
+                        <Tab eventKey="all" title="Todo los contenidos" className='tab'>
+                            <Map
+                                pos={this.props.user.places[0].location.coordinates}
+                                zoom={15}
+                                meetings={this.state.allMeetings}
+                                width={'100%'}
+                                height={'50vh'}
+                                marker={true}
+                            />
                             <Row as='section' >
-                                {this.state.nearMeetings.map(elm => <SearchCard key={elm._id} {...elm} />)}
+                                <Col md='12'>
+                                    <header>
+                                        <hr />
+                                        <h1>Todas las quedadas disponibles</h1>
+                                    </header>
+                                </Col>
+                                {this.state.allMeetings.map(elm => <SearchCard key={elm._id} {...elm} />)}
                             </Row>
                         </Tab>
                     </Tabs>
-                    {/* <Row as='section' >
-                    {this.state.nearMeetings.map(elm => <SearchCard key={elm._id} {...elm} />)}
-                </Row> */}
-                </Container>
-            </>
+                    : <Loading />}
+            </Container>
         )
     }
 

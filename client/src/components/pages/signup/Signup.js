@@ -10,6 +10,7 @@ import Form from 'react-bootstrap/Form'
 import AuthService from './../../../service/auth.service'
 import FileService from './../../../service/file.service'
 
+
 class Signup extends Component {
 
     constructor(props) {

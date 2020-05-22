@@ -18,6 +18,7 @@
     object-fit: cover;
     border-radius: 50%;
     border: 1.5px solid #FAF8F0;
+    margin-bottom: 10px;
 }
 
 .side-link{
@@ -28,6 +29,8 @@
 .side-bar li{
     list-style: none;
     text-align: end;
+    margin-bottom: 15px;
+    
 }
 
 .side-bar hr{

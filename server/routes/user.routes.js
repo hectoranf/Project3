@@ -5,7 +5,7 @@ const ensureLogin = require("connect-ensure-login")
 const User = require('../models/user.model')
 
 router.post('/follow', ensureLogin.ensureLoggedIn(), (req, res, next) => {
-    User.findByIdAndUpdate(req.user._id, { $push: { followingList: req.body.media } }, { new: true }).populate('createdMeetings').populate('joinedMeetings')
+    User.findByIdAndUpdate(req.user._id, { $push: { followingList: req.body.media } }, { new: true })
         .then(data => res.json(data))
         .catch(err => next(new Error(err)))
 })
